@@ -3,5 +3,10 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.scala-ide.sdt.launching.SCALA_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="/home/duytri/git/MongoDB2Files/MongoDB2Files/libs/bson-3.1.0.jar"/>
+	<classpathentry kind="lib" path="/home/duytri/git/MongoDB2Files/MongoDB2Files/libs/mongodb-driver-async-3.1.0.jar"/>
+	<classpathentry kind="lib" path="/home/duytri/git/MongoDB2Files/MongoDB2Files/libs/mongodb-driver-core-3.1.0.jar"/>
+	<classpathentry kind="lib" path="/home/duytri/git/MongoDB2Files/MongoDB2Files/libs/mongo-scala-bson_2.11-1.0.1.jar"/>
+	<classpathentry kind="lib" path="/home/duytri/git/MongoDB2Files/MongoDB2Files/libs/mongo-scala-driver_2.11-1.0.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
