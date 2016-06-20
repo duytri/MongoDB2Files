@@ -24,16 +24,15 @@ object MongoDB2Files {
     val collection: MongoCollection[Document] = database.getCollection("all")
     val data = collection.find(equal("subject", args(0))).projection(exclude("_id", "title", "link", "subject"))
     var iFileName = 0
-    println("No. of doc: " + collection.count.headResult())
+    println("No. of doc in collection: " + collection.count.headResult())
     //data.first().printResults()
+    println("No. of doc in query: " + data.results.length)
     data.results.foreach { doc =>
       {
-        val content = doc.head._2.asString.getValue
-        println(content)
         val file = new File(args(1) + iFileName)
         val bw = new BufferedWriter(new FileWriter(file, true))
         bw.flush()
-        bw.write(content)
+        bw.write(doc.head._2.asString.getValue.trim)
         bw.close()
         iFileName = iFileName + 1
       }

@@ -3,11 +3,9 @@ import Keys._
 import sbtassembly.AssemblyPlugin.autoImport._
 
 name := "MongoDB2Files"
-version := "0.1-SNAPSHOT"
+version := "0.2-SNAPSHOT"
 organization := "uit.islab"
 scalaVersion := "2.10.6"
-
-libraryDependencies += "org.mongodb.scala" %% "mongo-scala-driver" % "1.1.1"
 
 unmanagedBase <<= baseDirectory { base => base / "libs" }
 unmanagedResourceDirectories in Compile += baseDirectory.value / "src" / "main"
