@@ -16,6 +16,7 @@ object MongoDB2Files {
   /*
    * args[0]: value of "subject"
    * args[1]: output directory (/home/duytri/Desktop/testMongo/)
+   * args[2]: prefix of output file (ex: "sh")
    * */
   def main(args: Array[String]): Unit = {
     val mongoClient: MongoClient = MongoClient("mongodb://PTNHTTT07:27017")
@@ -29,10 +30,11 @@ object MongoDB2Files {
     println("No. of doc in query: " + data.results.length)
     data.results.foreach { doc =>
       {
-        val file = new File(args(1) + iFileName)
+        val file = new File(args(1) + args(2) + iFileName)
+        var content = doc.head._2.asString.getValue
         val bw = new BufferedWriter(new FileWriter(file, true))
         bw.flush()
-        bw.write(doc.head._2.asString.getValue.trim)
+        bw.write(content.trim)
         bw.close()
         iFileName = iFileName + 1
       }
